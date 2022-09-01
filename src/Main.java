@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         int[] cash = generateRandomArray();
-        int minCashDay = 200000;
-        int maxCashDay = 100000;
+        int minCashDay = cash[0];
+        int maxCashDay = cash[0];
 
         for (int current : cash) {
             if (current > maxCashDay) {
@@ -15,7 +15,8 @@ public class Main {
                 minCashDay = current;
             }
         }
-        System.out.println("Минимальная сумма трат за день составила " + minCashDay + " рублей. Максимальная сумма трат за день составила " + maxCashDay + " рублей.");
+        System.out.printf("Минимальная сумма трат за день составила %s рублей. \n" +
+                "Максимальная сумма трат за день составила %s рублей.", minCashDay, maxCashDay);
     }
     public static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
